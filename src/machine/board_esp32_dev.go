@@ -6,12 +6,22 @@ package machine
 // https://docs.espressif.com/projects/esp-idf/en/stable/esp32/_images/esp32-devkitC-v4-pinout.png
 
 // Reference 2:
+// This is the board I have, but it's slightly different, so for now I'm going to avoid pins that
+// are missing/unlabeled
 // https://ae01.alicdn.com/kf/Sa74c2ababf3640c5b77022481509c13bi.jpg
-// This is the board I have, but it's slightly different, so I'm going
-// to avoid pins that are missing/unlabeled in-case I mess something up
 
+// Silkscreen Pins
 const (
-	// Analog-to-Digital
+	VP  = GPIO36
+	VN  = GPIO39
+	CMD = GPIO11
+	TX  = GPIO1
+	RX  = GPIO3
+	CLK = GPIO6
+)
+
+// Analog-to-Digital
+const (
 	// ADC(Bus)_(Channel)
 	ADC1_0 = GPIO36
 	//ADC1_1
@@ -33,8 +43,10 @@ const (
 	ADC2_7 = GPIO27
 	// ADC2_8
 	ADC2_9 = GPIO26
+)
 
-	// Digital-to-Analog
+// Digital-to-Analog
+const (
 	DAC_1 = GPIO25
 	DAC_2 = GPIO26
 )
@@ -43,9 +55,9 @@ const (
 const (
 	UART0_TX_PIN = GPIO1
 	UART0_RX_PIN = GPIO3
-	// Unsure of these
-	UART1_TX_PIN = GPIO17
-	UART1_RX_PIN = GPIO16
+	// Unsure of these as don't appear on Ref 1 but do on Ref 2
+	// UART1_TX_PIN = GPIO17
+	// UART1_RX_PIN = GPIO16
 
 	UART_TX_PIN = UART0_TX_PIN
 	UART_RX_PIN = UART0_RX_PIN
